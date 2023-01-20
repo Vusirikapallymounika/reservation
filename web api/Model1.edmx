@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="mouniModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="student">
+          <Key>
+            <PropertyRef Name="stu_name" />
+          </Key>
+          <Property Name="stu_id" Type="int" />
+          <Property Name="stu_name" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="stu_phoneno" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="stu_email_id" Type="varchar" MaxLength="50" />
+          <Property Name="stu_ranking" Type="int" />
+          <Property Name="stu_branch" Type="varchar" MaxLength="10" />
+          <Property Name="empid" Type="int" />
+        </EntityType>
+        <EntityContainer Name="mouniModelStoreContainer">
+          <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mouniModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="student">
+          <Key>
+            <PropertyRef Name="stu_name" />
+          </Key>
+          <Property Name="stu_id" Type="Int32" />
+          <Property Name="stu_name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="stu_phoneno" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="stu_email_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="stu_ranking" Type="Int32" />
+          <Property Name="stu_branch" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="empid" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="mouniEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="students" EntityType="Self.student" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mouniModelStoreContainer" CdmEntityContainer="mouniEntities">
+          <EntitySetMapping Name="students">
+            <EntityTypeMapping TypeName="mouniModel.student">
+              <MappingFragment StoreEntitySet="student">
+                <ScalarProperty Name="stu_id" ColumnName="stu_id" />
+                <ScalarProperty Name="stu_name" ColumnName="stu_name" />
+                <ScalarProperty Name="stu_phoneno" ColumnName="stu_phoneno" />
+                <ScalarProperty Name="stu_email_id" ColumnName="stu_email_id" />
+                <ScalarProperty Name="stu_ranking" ColumnName="stu_ranking" />
+                <ScalarProperty Name="stu_branch" ColumnName="stu_branch" />
+                <ScalarProperty Name="empid" ColumnName="empid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

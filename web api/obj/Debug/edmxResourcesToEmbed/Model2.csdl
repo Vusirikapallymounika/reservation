@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mouniModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Reservation">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="Int32" Nullable="false" />
+    <Property Name="Hotel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Arrival" Type="DateTime" Precision="0" />
+    <Property Name="Departure" Type="DateTime" Precision="0" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Guests" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="mouniEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Reservations" EntityType="Self.Reservation" />
+    <FunctionImport Name="sp_GetAllDetails" ReturnType="Collection(mouniModel1.sp_GetAllDetails_Result)" />
+  </EntityContainer>
+  <ComplexType Name="sp_GetAllDetails_Result">
+    <Property Type="Int32" Name="Sno" Nullable="false" />
+    <Property Type="String" Name="Hotel" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Arrival" Nullable="true" />
+    <Property Type="DateTime" Name="Departure" Nullable="true" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Guests" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Price" Nullable="true" />
+  </ComplexType>
+</Schema>

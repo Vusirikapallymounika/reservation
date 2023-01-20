@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mouniModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Reservation">
+    <Key>
+      <PropertyRef Name="Sno" />
+    </Key>
+    <Property Name="Sno" Type="int" Nullable="false" />
+    <Property Name="Hotel" Type="varchar" MaxLength="50" />
+    <Property Name="Arrival" Type="date" />
+    <Property Name="Departure" Type="date" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+    <Property Name="Guests" Type="varchar" MaxLength="50" />
+    <Property Name="Price" Type="int" />
+  </EntityType>
+  <Function Name="sp_GetAllDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="mouniModel1StoreContainer">
+    <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

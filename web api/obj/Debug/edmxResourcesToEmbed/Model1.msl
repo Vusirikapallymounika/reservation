@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mouniModelStoreContainer" CdmEntityContainer="mouniEntities">
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="mouniModel.student">
+        <MappingFragment StoreEntitySet="student">
+          <ScalarProperty Name="stu_id" ColumnName="stu_id" />
+          <ScalarProperty Name="stu_name" ColumnName="stu_name" />
+          <ScalarProperty Name="stu_phoneno" ColumnName="stu_phoneno" />
+          <ScalarProperty Name="stu_email_id" ColumnName="stu_email_id" />
+          <ScalarProperty Name="stu_ranking" ColumnName="stu_ranking" />
+          <ScalarProperty Name="stu_branch" ColumnName="stu_branch" />
+          <ScalarProperty Name="empid" ColumnName="empid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
